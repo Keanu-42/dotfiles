@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
   use 'neanias/everforest-nvim' -- theme
   use 'christoomey/vim-tmux-navigator'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'p00f/nvim-ts-rainbow'
   use 'lewis6991/gitsigns.nvim'
   use {
     'nvim-lualine/lualine.nvim', -- statusbar
@@ -32,6 +33,12 @@ return require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    }
+  }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',  -- 文件检索
+    requires = { {'nvim-lua/plenary.nvim'
+      } 
     }
   }
 
