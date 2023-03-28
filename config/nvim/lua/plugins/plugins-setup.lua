@@ -68,6 +68,12 @@ return require('packer').startup(function(use)
     'rcarriga/nvim-notify',
     }
   } 
+  use { 
+    'sindrets/diffview.nvim', 
+    requires = {
+      'nvim-lua/plenary.nvim',
+    }
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
