@@ -10,11 +10,12 @@ local ensure_packer = function()
   return false
 end
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-]])
+-- packer auto-reloading
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+-- ]])
 
 local packer_bootstrap = ensure_packer()
 
