@@ -30,4 +30,5 @@ opt.smartcase = true
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
+-- vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[colorscheme everforest]]
