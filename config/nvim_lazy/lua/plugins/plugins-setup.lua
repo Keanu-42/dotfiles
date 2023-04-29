@@ -55,16 +55,10 @@ vim.opt.rtp:prepend(lazypath)
   'hrsh7th/cmp-path',
   'numToStr/Comment.nvim',
   'windwp/nvim-autopairs',
-
+  'simrat39/symbols-outline.nvim',
   {
     "folke/trouble.nvim",
     opts = { use_diagnostic_signs = true },
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
   },
   {
     'nvim-lualine/lualine.nvim',
