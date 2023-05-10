@@ -35,8 +35,9 @@ end
 vim.opt.rtp:prepend(lazypath)
   require('lazy').setup({
   {
-    "folke/tokyonight.nvim",
+    'folke/tokyonight.nvim',
     'neanias/everforest-nvim',
+    'mhartington/oceanic-next',
     lazy = false,
     priority = 1000,
     config = function()
