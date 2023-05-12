@@ -1,3 +1,4 @@
+local lspkind = require("lspkind")
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
@@ -65,7 +66,43 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
-  }, {
     { name = 'buffer' },
   })
 })
+
+cmp.setup ({
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol", -- show only symbol annotations
+      with_text = true,
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        luasnip = "[LuaSnip]",
+        latex_symbols = "[Latex]",
+      }),
+
+      before = function (entry, vim_item)
+        vim_item.menu = "["..string.upper(entry.source.name).."]"
+        return vim_item
+      end
+    })
+  }
+})
+
+cmp.setup.cmdline({ "/", "?" }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "buffer" }
+  }
+})
+
+cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({ { name = "path" } },
+    { { name = "cmdline" } })
+})
+

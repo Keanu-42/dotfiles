@@ -36,8 +36,8 @@ vim.opt.rtp:prepend(lazypath)
   require('lazy').setup({
   {
     'folke/tokyonight.nvim',
-    'neanias/everforest-nvim',
     'mhartington/oceanic-next',
+    'neanias/everforest-nvim',
     lazy = false,
     priority = 1000,
     config = function()
@@ -48,6 +48,7 @@ vim.opt.rtp:prepend(lazypath)
   'p00f/nvim-ts-rainbow',
   'lewis6991/gitsigns.nvim',
   'neovim/nvim-lspconfig',
+  'onsails/lspkind-nvim',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'L3MON4D3/LuaSnip',
@@ -57,6 +58,7 @@ vim.opt.rtp:prepend(lazypath)
   'numToStr/Comment.nvim',
   'windwp/nvim-autopairs',
   'simrat39/symbols-outline.nvim',
+
   {
     "folke/trouble.nvim",
     opts = { use_diagnostic_signs = true },
