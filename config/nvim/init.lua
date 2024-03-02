@@ -1,16 +1,10 @@
-require("plugins.plugins-setup")
-require("core.options")
-require("core.keymaps")
+if vim.loader then
+	vim.loader.enable()
+end
 
--- plugins
-require("plugins.autopairs")
-require("plugins.cmp")
-require("plugins.comment")
-require("plugins.diffview")
-require("plugins.gitsigns")
-require("plugins.lualine")
-require("plugins.lsp")
-require("plugins.noice")
-require("plugins.nvim-tree")
-require("plugins.telescope")
-require("plugins.treesitter")
+_G.dd = function(...)
+	require("util.debug").dump(...)
+end
+vim.print = _G.dd
+
+require("config.lazy")
