@@ -24,7 +24,7 @@ export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mod
 ### oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(git zsh-autosuggestions)
+plugins=(fzf git z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 ### SET MANPAGER
@@ -205,3 +205,7 @@ alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
+# fzf
+alias ff="fzf --color -1 --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias vf="vim \$(fzf --color -1 --preview 'bat --style=numbers --color=always --line-range :500 {}')"
+alias zf="z \$(find . -type d 2>/dev/null| fzf --color -1)"
